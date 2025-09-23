@@ -184,6 +184,10 @@ class NimAI:
         if len(possible_actions) == 1:
             return possible_actions.pop()
 
+        if epsilon:
+            if random.random() <= self.epsilon:
+                return random.choice(list(possible_actions))
+
         best_future = self.best_future_reward(state)
 
         best_action = None
@@ -195,10 +199,6 @@ class NimAI:
             if action_reward == best_future:
                 best_action = action
                 break
-
-        if epsilon:
-            if random.random() <= self.epsilon:
-                return random.choice(list(possible_actions))
 
         return best_action
 
