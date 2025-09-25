@@ -214,3 +214,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Specific files
+/home/redakas/projects/CS50AI/psets/5/traffic/gtsrb
